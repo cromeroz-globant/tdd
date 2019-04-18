@@ -43,6 +43,36 @@ public class CustomerTest {
     }
 
     /**
+     * GIVEN the customer has one regular movie rental for 2 days
+     * WHEN the statement is calculated
+     * THEN the resulting HTML statement is
+     * <pre><code>
+     *   <h1>Rental Record for John Doe</h1>
+     *   <ul>
+     *   <li>Gone in 60 seconds: <em>2.0</em></li>
+     *   </ul>
+     *   <p>Amount owed is <em>2.0</em></p>
+     *   <p>You earned <em>1</em> frequent renter points</p>
+     * </code></pre>
+     */
+    @Test
+    public void testThatRegularMovieRentalTwoDayHtmlStatementIsCalculatedCorrectly() {
+        // Prepare
+        customer.addRental(new Rental(new Movie("Gone in 60 seconds", Movie.REGULAR), 2));
+
+        // Execute
+        String statement = customer.htmlStatement();
+
+        // Assert
+        assertEquals("<h1>Rental Record for John Doe</h1>\n" +
+                "<ul>\n" +
+                "<li>Gone in 60 seconds: <em>2.0</em></li>\n" +
+                "</ul>\n" +
+                "<p>Amount owed is <em>2.0</em></p>\n" +
+                "<p>You earned <em>1</em> frequent renter points</p>", statement);
+    }
+
+    /**
      * GIVEN the customer has one regular movie rental for more than 2 days
      * WHEN the statement is calculated
      * THEN the resulting statement is
