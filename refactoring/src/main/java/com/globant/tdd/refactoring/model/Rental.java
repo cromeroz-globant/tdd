@@ -1,8 +1,5 @@
 package com.globant.tdd.refactoring.model;
 
-/**
- * @author Cesar Romero &lt;cesar.romero@salesforce.com&gt;
- */
 class Rental {
     private Movie _movie;
     private int _daysRented;

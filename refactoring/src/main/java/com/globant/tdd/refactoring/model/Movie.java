@@ -1,8 +1,5 @@
 package com.globant.tdd.refactoring.model;
 
-/**
- * @author Cesar Romero &lt;cesar.romero@salesforce.com&gt;
- */
 public class Movie {
     public static final int CHILDRENS = 2;
     public static final int REGULAR = 0;
