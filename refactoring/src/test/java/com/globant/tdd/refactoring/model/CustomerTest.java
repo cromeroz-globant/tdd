@@ -27,7 +27,7 @@ public class CustomerTest {
     @Test
     public void testThatRegularMovieRentalTwoDayStatementIsCalculatedCorrectly() {
         // Prepare
-        customer.addRental(new Rental(new Movie("Gone in 60 seconds", Movie.REGULAR), 2));
+        customer.addRental(new Rental(new Movie("Gone in 60 seconds", new RegularPrice()), 2));
 
         // Execute
         String statement = customer.statement();
@@ -55,7 +55,7 @@ public class CustomerTest {
     @Test
     public void testThatRegularMovieRentalTwoDayHtmlStatementIsCalculatedCorrectly() {
         // Prepare
-        customer.addRental(new Rental(new Movie("Gone in 60 seconds", Movie.REGULAR), 2));
+        customer.addRental(new Rental(new Movie("Gone in 60 seconds", new RegularPrice()), 2));
 
         // Execute
         String statement = customer.htmlStatement();
@@ -83,7 +83,7 @@ public class CustomerTest {
     @Test
     public void testThatRegularMovieRentalMoreThanTwoDaysStatementIsCalculatedCorrectly() {
         // Prepare
-        customer.addRental(new Rental(new Movie("Avengers Age of Ultron", Movie.REGULAR), 3));
+        customer.addRental(new Rental(new Movie("Avengers Age of Ultron", new RegularPrice()), 3));
 
         // Execute
         String statement = customer.statement();
@@ -109,7 +109,7 @@ public class CustomerTest {
     @Test
     public void testThatChildrenMovieRentalThreeDaysStatementIsCalculatedCorrectly() {
         // Prepare
-        customer.addRental(new Rental(new Movie("Brother Bear", Movie.CHILDRENS), 3));
+        customer.addRental(new Rental(new Movie("Brother Bear", new ChildrensPrice()), 3));
 
         // Execute
         String statement = customer.statement();
@@ -135,7 +135,7 @@ public class CustomerTest {
     @Test
     public void testThatChildrenMovieRentalMoreThanThreeDaysStatementIsCalculatedCorrectly() {
         // Prepare
-        customer.addRental(new Rental(new Movie("Lego Batman", Movie.CHILDRENS), 4));
+        customer.addRental(new Rental(new Movie("Lego Batman", new ChildrensPrice()), 4));
 
         // Execute
         String statement = customer.statement();
@@ -161,7 +161,7 @@ public class CustomerTest {
     @Test
     public void testThatNewReleaseMovieRentalOneDayStatementIsCalculatedCorrectly() {
         // Prepare
-        customer.addRental(new Rental(new Movie("Avengers: Endgame", Movie.NEW_RELEASE), 1));
+        customer.addRental(new Rental(new Movie("Avengers: Endgame", new NewReleasePrice()), 1));
 
         // Execute
         String statement = customer.statement();
@@ -187,7 +187,7 @@ public class CustomerTest {
     @Test
     public void testThatNewReleaseMovieRentalMoreThanOneDayStatementIsCalculatedCorrectly() {
         // Prepare
-        customer.addRental(new Rental(new Movie("Roma", Movie.NEW_RELEASE), 2));
+        customer.addRental(new Rental(new Movie("Roma", new NewReleasePrice()), 2));
 
         // Execute
         String statement = customer.statement();

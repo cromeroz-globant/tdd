@@ -3,7 +3,7 @@ package com.globant.tdd.refactoring.model;
 public class RegularPrice extends Price {
     @Override
     int getPriceCode() {
-        return Movie.REGULAR;
+        return Price.REGULAR;
     }
 
     @Override
