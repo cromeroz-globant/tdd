@@ -2,12 +2,9 @@ package com.globant.tdd.refactoring.model;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
 public class CustomerTest {
     private Customer customer;
 
